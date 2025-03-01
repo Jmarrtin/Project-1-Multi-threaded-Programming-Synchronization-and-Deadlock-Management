@@ -41,3 +41,37 @@ The project is divided into two main components:
    ```bash
    git clone https://github.com/yourusername/MultiThreadedCarSimulation.git
    cd MultiThreadedCarSimulation
+Build and Run Instructions
+Project A: Multi-Threaded Car Simulation
+Build:
+Compile the source code using the following command:
+
+bash
+Copy
+g++ -std=c++11 projectA.cpp -pthread -o projectA
+Run:
+Execute the program:
+
+bash
+Copy
+./projectA
+Note:
+
+The simulation runs Phases 1, 2, and 4 by default.
+Phase 3 (deadlock demonstration) is commented out in the code due to its potential to hang the program. Uncomment it only if you wish to observe deadlock behavior.
+Project B: Inter-Process Communication (IPC)
+Build:
+Compile the source code using:
+bash
+Copy
+g++ projectB.cpp -o projectB
+Run:
+Execute the program:
+bash
+Copy
+./projectB
+Additional Information
+Documentation:
+A detailed LaTeX report documenting the project design, implementation, testing, and results is included in the repository.
+Demonstration:
+A demonstration video showcasing the project environment, build process, and execution is also available.
