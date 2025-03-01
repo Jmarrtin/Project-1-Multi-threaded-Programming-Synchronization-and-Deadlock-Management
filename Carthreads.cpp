@@ -1,4 +1,4 @@
-// projectA.cpp
+
 #include <iostream>
 #include <thread>
 #include <mutex>
@@ -8,7 +8,7 @@
 
 using namespace std;
 
-// ----------------- Phase 1: Basic Thread Operations -----------------
+// Phase 1: Basic Thread Operations
 void carBasicOperation(int carId) {
     cout << "Car " << carId << " is starting its journey." << endl;
     // Simulate driving work
@@ -28,7 +28,7 @@ void runPhase1() {
     cout << "Phase 1 completed.\n" << endl;
 }
 
-// ----------------- Phase 2: Resource Protection (Gas Station) -----------------
+// Phase 2: Resource Protection (Gas Station) 
 mutex gasStationMutex;
 
 void refuelAtGasStation(int carId) {
@@ -53,7 +53,7 @@ void runPhase2() {
     cout << "Phase 2 completed.\n" << endl;
 }
 
-// ----------------- Phase 3: Deadlock Creation (Bridges Scenario) -----------------
+// Phase 3: Deadlock Creation (Bridges Scenario)
 mutex bridgeAMutex;
 mutex bridgeBMutex;
 
@@ -99,7 +99,7 @@ void runPhase3() {
     cout << "Phase 3 completed.\n" << endl;
 }
 
-// ----------------- Phase 4: Deadlock Resolution -----------------
+// Phase 4: Deadlock Resolution
 void carDeadlockResolved(int carId) {
     cout << "Car " << carId << " attempting to lock both bridges safely." << endl;
     // Use std::lock to lock both mutexes without risk of deadlock
@@ -124,13 +124,13 @@ void runPhase4() {
     cout << "Phase 4 completed.\n" << endl;
 }
 
-// ----------------- Main Menu -----------------
+// Menu
 int main() {
     // Choose phases to run (for demonstration, all phases are executed sequentially)
     runPhase1();
     runPhase2();
 
-    // WARNING: runPhase3 may lead to a deadlock; you can comment it out after testing.
+    
     cout << "Starting Phase 3 (Deadlock Creation). This phase may hang if a deadlock occurs." << endl;
     // Uncomment the next line to test deadlock behavior.
     // runPhase3();
